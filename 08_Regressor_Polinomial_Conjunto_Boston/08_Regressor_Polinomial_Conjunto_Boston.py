@@ -134,8 +134,8 @@ print(' ')
 print(' REGRESSOR POLINOMIAL DE GRAU K:')
 print(' ')
 
-print('  K   DENTRO da amostra  FORA da amostra')
-print(' ---  -----------------  ---------------')
+print('  K   NA   DENTRO da amostra  FORA da amostra')
+print(' --- ----  -----------------  ---------------')
 
 for k in range(1,6):
     
@@ -159,5 +159,7 @@ for k in range(1,6):
     mse_out  = mean_squared_error(y_teste, y_resposta_teste)
     rmse_out = math.sqrt(mse_out)
     r2_out   = r2_score(y_teste, y_resposta_teste)
+    
+    numero_atributos = x_treino_poly.shape[1]
 
-    print(' %3d  %17.4f  %15.4f' % ( k , rmse_in , rmse_out ) )
+    print(' %3d %4d %17.4f  %15.4f' % ( k , numero_atributos, rmse_in , rmse_out ) )
